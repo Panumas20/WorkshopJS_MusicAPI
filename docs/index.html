@@ -16,17 +16,17 @@
 
 	<body>
 		<h2>โปรแกรมเล่นเพลง(Music API)</h2>
-		<div class="music-container play" id="music-container">
+		<div class="music-container" id="music-container">
 			<div class="music-info">
-				<h4 class="title">LALISA</h4>
+				<h4 class="title" id="title"></h4>
 				<div class="progress-container" id="progress-container">
 					<div class="progress" id="progress"></div>
 				</div>
 			</div>
-			<audio src="music/LISA - 'LALISA'.mp3" controls hidden></audio>
+			<audio src="" controls hidden id="audio"></audio>
 
 			<div class="img-container">
-				<img src="cover/LALISA.jpeg" alt="" id="cover" />
+				<img src="" alt="" id="cover" />
 			</div>
 
 			<div class="navigation">
@@ -35,5 +35,6 @@
 				<button id="next" class="action-btn"><i class="fas fa-forward"></i></button>
 			</div>
 		</div>
+		<script src="script.js"></script>
 	</body>
 </html>
