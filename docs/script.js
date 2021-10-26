@@ -9,12 +9,12 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 const songs = ['LALISA', 'SOLO'];
-let index = 1;
+let index = 0;
 
 function loadSongs(songs) {
 	title.innerText = `เพลง ${songs}.mp3`;
 	cover.src = `cover/${songs}.jpg`;
-	audio.src = `music/${songs}.mp4`;
+	audio.src = `music/${songs}.mp3`;
 }
 
 loadSongs(songs[index]);
@@ -27,7 +27,23 @@ playBtn.addEventListener('click', () => {
 		playSong();
 	}
 });
+nextBtn.addEventListener('click', () => {
+	index++;
+	if (index > songs.length - 1) {
+		index = 0;
+	}
+	loadSongs(songs[index]);
+	playSong();
+});
 
+preBtn.addEventListener('click', () => {
+	index--;
+	if (index < 0) {
+		index = songs.length - 1;
+	}
+	loadSongs(songs[index]);
+	playSong();
+});
 function playSong() {
 	music_Container.classList.add('play');
 	playBtn.querySelector('i.fas').classList.remove('fa-play');
